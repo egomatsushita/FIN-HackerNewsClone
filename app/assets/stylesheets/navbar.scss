@@ -1,0 +1,36 @@
+// Place all the styles related to the TopStories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$white-border-color: 1px solid #fff;
+$navbar-bg-color: #ef6437;
+
+.nav {
+  display: flex;
+  list-style: none;
+  background-color: $navbar-bg-color;
+  padding: 2px;
+  align-items: center;
+
+  li {
+    padding: 0px 5px;
+    
+    .ycombinator-logo {
+      width: 20px;
+      height: 20px;
+      border: $white-border-color;
+    }
+  }
+
+  li:first-child {
+    height: 22px;
+  }
+  
+  li:nth-child(n+4):nth-last-child(n+2) {
+    border-left: 1px solid #000;
+  }
+
+  .login {
+    margin-left: auto;
+  }  
+}
