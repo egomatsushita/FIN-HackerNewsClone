@@ -1,0 +1,2 @@
+class TopStoriesController < ApplicationController
+end
