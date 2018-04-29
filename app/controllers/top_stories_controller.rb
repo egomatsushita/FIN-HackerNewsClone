@@ -47,9 +47,13 @@ class TopStoriesController < ApplicationController
   end
 
   def sum_kids(kids)
+    result = "discuss"
+    
     unless kids.nil?
-      kids.count
+      result = kids.count > 1 ? kids.count.to_s + " comments" : kids.count.to_s + " comment"
     end
+
+    result
   end
 
   def get_url_substring(url)
@@ -62,7 +66,7 @@ class TopStoriesController < ApplicationController
       if domain.match("www")
         domain = domain.split('.')[1..-1].join('.')
       end
-      
+
       domain = "(#{domain})"
     end
 
