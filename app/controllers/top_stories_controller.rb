@@ -1,9 +1,9 @@
-require "net/http"
-require "json"
+require 'net/http'
+require 'json'
 
 class TopStoriesController < ApplicationController
   def index
-    response = get_data("https://hacker-news.firebaseio.com/v0/topstories.json")
+    response = get_data('https://hacker-news.firebaseio.com/v0/topstories.json')
     top_stories = JSON.parse(response) 
     index_start = 0;
     index_end = 30;
@@ -14,12 +14,12 @@ class TopStoriesController < ApplicationController
       response = get_data("https://hacker-news.firebaseio.com/v0/item/#{story}.json")
       response = JSON.parse(response)
       append_attributes = { 
-        "kids_length" => sum_kids(response["kids"]),
-        "get_time_string" => get_time_string(response["time"]),
-        "domain" => get_url_substring(response["url"])
+        'kids_length' => sum_kids(response['kids']),
+        'get_time_string' => get_time_string(response['time']),
+        'domain' => get_url_substring(response['url'])
       }
       response.merge!(append_attributes)
-      @stories.push(response)  
+      @stories.push(response)
     end
   end
   
@@ -36,21 +36,21 @@ class TopStoriesController < ApplicationController
     result = nil
 
     if dif > 86400
-      result = dif < 172800 ? (dif / 86400).to_s + " day ago" : (dif / 86400).to_s + " days ago"
+      result = dif < 172800 ? (dif / 86400).to_s + ' day ago' : (dif / 86400).to_s + ' days ago'
     elsif dif > 3600
-      result = dif < 7200 ? (dif / 3600).to_s + " hour ago" : (dif / 3600).to_s + " hours ago"
+      result = dif < 7200 ? (dif / 3600).to_s + ' hour ago' : (dif / 3600).to_s + ' hours ago'
     else
-      result = dif < 120 ? (dif / 60).to_s + " minute ago" : (dif / 60).to_s + " minutes ago"
+      result = dif < 120 ? (dif / 60).to_s + ' minute ago' : (dif / 60).to_s + ' minutes ago'
     end
 
     result
   end
 
   def sum_kids(kids)
-    result = "discuss"
+    result = 'discuss'
     
     unless kids.nil?
-      result = kids.count > 1 ? kids.count.to_s + " comments" : kids.count.to_s + " comment"
+      result = kids.count > 1 ? kids.count.to_s + ' comments' : kids.count.to_s + ' comment'
     end
 
     result
@@ -63,7 +63,7 @@ class TopStoriesController < ApplicationController
       split_url = url.split('/')
       domain = split_url[2]
 
-      if domain.match("www")
+      if domain.match('www')
         domain = domain.split('.')[1..-1].join('.')
       end
 

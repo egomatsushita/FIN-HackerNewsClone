@@ -42,19 +42,15 @@ nav {
       
       li {
         padding: 0px 5px;      
-      }
-      
+      }      
       li:first-child {
         padding-left: 0px;
-      }
-      
+      }     
       li:nth-child(n+2):nth-last-child(n+1) {
         border-left: 1px solid #000;
       }   
-    }
-    
-  }
-  
+    }   
+  }  
   .login {
     align-self: center;
     padding-right: 4px;
