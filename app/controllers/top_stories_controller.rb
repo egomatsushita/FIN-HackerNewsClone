@@ -14,7 +14,7 @@ class TopStoriesController < ApplicationController
       response = get_data("https://hacker-news.firebaseio.com/v0/item/#{story}.json")
       response = JSON.parse(response)
       append_attributes = { 
-        'kids_length' => sum_kids(response['kids']),
+        'get_total_comments' => get_total_comments(response['descendants']),
         'get_time_string' => get_time_string(response['time']),
         'domain' => get_url_substring(response['url'])
       }
@@ -46,11 +46,14 @@ class TopStoriesController < ApplicationController
     result
   end
 
-  def sum_kids(kids)
-    result = 'discuss'
+  def get_total_comments(kids)
+    result = ''
     
     unless kids.nil?
-      result = kids.count > 1 ? kids.count.to_s + ' comments' : kids.count.to_s + ' comment'
+      result = kids > 1 ? kids.to_s + ' comments' : kids.to_s + ' comment'
+      if kids == 0 
+        result = ' discuss'
+      end
     end
 
     result
