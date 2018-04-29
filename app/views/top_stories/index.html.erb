@@ -23,7 +23,9 @@
         ></p>
         <ul>
           <li>
-            <%= score %> points by <%= by %> <%= get_time_string %>
+            <%= score %> points by 
+            <a href="https://news.ycombinator.com/user?id=<%= by %>"><%= by %></a> 
+            <%= get_time_string %>
           </li>
           <li>
             hide

@@ -1,4 +1,4 @@
-$light-gray-font-color: #828282;
+$gray-font-color: #828282;
 
 section {
   display: flex;
@@ -10,7 +10,7 @@ section {
     margin-bottom: 3px;
 
     .index {
-      color: $light-gray-font-color;
+      color: $gray-font-color;
       font-size: 11pt;
       min-width: 28px;
 
@@ -31,10 +31,17 @@ section {
         text-decoration: inherit;
         color: inherit;
       }
+      a:hover {
+        text-decoration: underline;
+      }
+      a:visited {
+        text-decoration: inherit;
+        color: $gray-font-color;
+      }
       ul {
         margin: 2px 0px;
         font-size: 7pt;
-        color: $light-gray-font-color;
+        color: $gray-font-color;
         list-style: none;
         padding-left: 0px;
 
@@ -46,14 +53,14 @@ section {
           padding: 0px;
         }
         li:nth-child(2){
-          border-left: 1px solid $light-gray-font-color;
-          border-right: 1px solid $light-gray-font-color;
+          border-left: 1px solid $gray-font-color;
+          border-right: 1px solid $gray-font-color;
         }
         
       }
       .domain {
         font-size: 8pt;
-        color: $light-gray-font-color;
+        color: $gray-font-color;
       }
     }
   }
