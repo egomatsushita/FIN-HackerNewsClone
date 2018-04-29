@@ -1,1 +1,16 @@
 <%= render '/partials/navbar' %>
+
+<section>
+  <% @stories.each_with_index do |story, index| %>
+    <div class="story">
+      <div class="index">
+        <%= index + 1 %>.
+        <img id="gray-arrow" src="/gray_triangle.png" />
+      </div>
+      <div class="text">
+        <p class="title"><%= story["title"] %></p>
+        <p class="sub-text"><%= story["score"] %> points by <%= story["by"] %> <%= story["get_time_string"] %> <%= story["kids_length"] %> comments</p>
+      </div>
+    </div>
+  <% end %>
+</section>

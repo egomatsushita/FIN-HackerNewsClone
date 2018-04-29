@@ -1,0 +1,42 @@
+$light-gray-font-color: #828282;
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  
+  .story {
+    display: flex;
+    margin-bottom: 5px;
+
+    .index {
+      color: $light-gray-font-color;
+      font-size: 11pt;
+      min-width: 28px;
+      
+      #gray-arrow {
+        height: 8px;
+        width: 8px;
+      }
+    }
+    
+    .title {
+      font-size: 11pt;
+      flex-wrap: wrap;
+    }
+    
+    .text {
+      margin-left: 10px;
+    
+      p {
+        margin: 0px;
+      }
+
+      .sub-text {
+        font-size: 9pt;
+        color: $light-gray-font-color;
+      }
+    }
+  }
+
+}
