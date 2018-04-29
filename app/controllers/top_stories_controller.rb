@@ -15,7 +15,8 @@ class TopStoriesController < ApplicationController
       response = JSON.parse(response)
       append_attributes = { 
         "kids_length" => sum_kids(response["kids"]),
-        "get_time_string" => get_time_string(response["time"])
+        "get_time_string" => get_time_string(response["time"]),
+        "domain" => get_url_substring(response["url"])
       }
       response.merge!(append_attributes)
       @stories.push(response)  
@@ -49,5 +50,22 @@ class TopStoriesController < ApplicationController
     unless kids.nil?
       kids.count
     end
+  end
+
+  def get_url_substring(url)
+    domain = nil
+
+    unless url.nil?
+      split_url = url.split('/')
+      domain = split_url[2]
+
+      if domain.match("www")
+        domain = domain.split('.')[1..-1].join('.')
+      end
+      
+      domain = "(#{domain})"
+    end
+
+    domain
   end
 end
