@@ -3,6 +3,7 @@
 <section>
   <% @stories.each_with_index do |story, index| %>
     <% id = story["id"] %>
+    <% url = story["url"] %>
     <% title = story["title"] %>
     <% domain_name = story["domain"] %>
     <% score = story["score"] %>
@@ -16,7 +17,10 @@
         <a href="https://news.ycombinator.com/item?id=<%= id %>"><img id="gray-arrow" src="/gray_triangle.png" /></a>
       </div>
       <div class="text">
-        <p class="title"><%= title %>&nbsp;<span class="domain"><%= domain_name %></span></p>
+        <p class="title">
+          <a href=<%= url %>><%= title %>&nbsp;</a>
+          <span class="domain"><%= domain_name %></span
+        ></p>
         <ul>
           <li>
             <%= score %> points by <%= by %> <%= get_time_string %>

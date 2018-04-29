@@ -27,9 +27,10 @@ section {
     .text {
       margin-left: 10px;   
       
-      // p {
-        //   margin: 0px;
-        // }
+      a {
+        text-decoration: inherit;
+        color: inherit;
+      }
       ul {
         margin: 2px 0px;
         font-size: 7pt;
@@ -56,5 +57,4 @@ section {
       }
     }
   }
-
 }
