@@ -2,14 +2,32 @@
 
 <section>
   <% @stories.each_with_index do |story, index| %>
+    <% id = story["id"] %>
+    <% title = story["title"] %>
+    <% domain_name = story["domain"] %>
+    <% score = story["score"] %>
+    <% by = story["by"] %>
+    <% get_time_string = story["get_time_string"] %>
+    <% kids_length = story["kids_length"] %>
+
     <div class="story">
       <div class="index">
         <%= index + 1 %>.
-        <img id="gray-arrow" src="/gray_triangle.png" />
+        <a href="https://news.ycombinator.com/item?id=<%= id %>"><img id="gray-arrow" src="/gray_triangle.png" /></a>
       </div>
       <div class="text">
-        <p class="title"><%= story["title"] %>&nbsp;<span class="domain"><%= story["domain"] %></span></p>
-        <p class="sub-text"><%= story["score"] %> points by <%= story["by"] %> <%= story["get_time_string"] %> <%= story["kids_length"] %> comments</p>
+        <p class="title"><%= title %>&nbsp;<span class="domain"><%= domain_name %></span></p>
+        <ul>
+          <li>
+            <%= score %> points by <%= by %> <%= get_time_string %>
+          </li>
+          <li>
+            hide
+          </li>
+          <li>
+            <%= kids_length %> comments
+          </li>
+        </ul>
       </div>
     </div>
   <% end %>
