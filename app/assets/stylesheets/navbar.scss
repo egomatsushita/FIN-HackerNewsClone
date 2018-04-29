@@ -5,32 +5,57 @@
 $white-border-color: 1px solid #fff;
 $navbar-bg-color: #ef6437;
 
-.nav {
-  display: flex;
-  list-style: none;
+nav {
   background-color: $navbar-bg-color;
   padding: 2px;
-  align-items: center;
+  display: flex;
 
-  li {
-    padding: 0px 5px;
+  .ycombinator-logo {
+    height: 22px;
+    align-self: center;
     
-    .ycombinator-logo {
+    img {
       width: 20px;
       height: 20px;
       border: $white-border-color;
+      margin-right: 5px;
     }
   }
-
-  li:first-child {
-    height: 22px;
+  
+  .nav-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    
+    b {
+      margin-right: 5px;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      margin: 0px;
+      flex: 1 1 auto;
+      padding: 0px;
+      flex-wrap: wrap;
+      
+      li {
+        padding: 0px 5px;      
+      }
+      
+      li:first-child {
+        padding-left: 0px;
+      }
+      
+      li:nth-child(n+2):nth-last-child(n+1) {
+        border-left: 1px solid #000;
+      }   
+    }
+    
   }
   
-  li:nth-child(n+4):nth-last-child(n+2) {
-    border-left: 1px solid #000;
-  }
-
   .login {
-    margin-left: auto;
+    align-self: center;
   }  
 }
