@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'navbar';
+@import 'footer';
+@import 'top_stories';
+
+html, body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10pt;
+  height: 100%;
+  min-width: 300px;
+}
+.content {
+  width: 85%;
+  margin: 0px auto;
+  background-color: #f6f7f0;
+}
