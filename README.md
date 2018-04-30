@@ -30,8 +30,8 @@ Hacker News Clone App is a clone of the newsfeed on HackerNews. It will use Ruby
 
 ## Install
 
-1. Clone the repo: https://github.com/egomatsushita/FIN-HackerNewsClone
-2. In the FIN-HackerNewsClone directory run bundle install
+1. Clone the repo: `https://github.com/egomatsushita/FIN-HackerNewsClone`
+2. In the FIN-HackerNewsClone directory run `bundle install`
 3. Install postgresql
-4. Create the database
-5. Start the server: rails server
+4. Create the database: `hacker_news_development`
+5. Start the server: `rails server`
