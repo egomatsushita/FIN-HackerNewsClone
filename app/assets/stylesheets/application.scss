@@ -18,9 +18,10 @@
 @import 'footer';
 @import 'top_stories';
 
-body {
+html, body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 10pt;
+  height: 100%;
 }
 
 .content {
