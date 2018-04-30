@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get '/newest', to: 'newest#index'
   get '/newest/show'
+  
+  get '/show', to: 'show#index'
+  get '/show/show'
 
   root 'top_stories#index'
 end

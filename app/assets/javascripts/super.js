@@ -12,6 +12,8 @@ const yHandler = () => {
     url = "/top_stories/show";
   } else if (attr_data === "/newest/show") {
     url = "/newest/show";
+  } else if (attr_data === "/show/show") {
+    url = "/show/show";
   }
 
   if (scrollTop > limit && !isLoading) {
