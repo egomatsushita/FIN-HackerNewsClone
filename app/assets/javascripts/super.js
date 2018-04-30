@@ -7,15 +7,25 @@ const yHandler = () => {
   const limit = scrollHeight - innerHeight - 1;
   const attr_data = wrap.getAttribute("data");
   let url = null;
-
-  if (attr_data === "/top_stories/show") {
-    url = "/top_stories/show";
-  } else if (attr_data === "/newest/show") {
-    url = "/newest/show";
-  } else if (attr_data === "/show/show") {
-    url = "/show/show";
-  } else if (attr_data === "/ask/show") {
-    url = "/ask/show";
+  
+  switch (attr_data) {
+    case "/top_stories/show":
+      url = "/top_stories/show";
+      break;
+    case "/newest/show":
+      url = "/newest/show";
+      break;
+    case "/show/show":
+      url = "/show/show";
+      break;
+    case "/ask/show":
+      url = "/ask/show";
+      break;
+    case "/job/show":
+      url = "/job/show";
+      break;
+    default:
+      break;
   }
 
   if (scrollTop > limit && !isLoading) {

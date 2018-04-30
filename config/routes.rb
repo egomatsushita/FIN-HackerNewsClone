@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   get '/ask', to: 'ask#index'
   get '/ask/show'
 
+  get '/job', to: 'job#index'
+  get '/job/show'
+
   root 'top_stories#index'
 end

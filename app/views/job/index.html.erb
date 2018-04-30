@@ -1,0 +1,45 @@
+<%= render '/partials/navbar' %>
+
+<section>
+  <% @stories_ids.each_with_index do |story, index| %>
+    <% id = story["id"] %>
+    <% url = story["url"] %>
+    <% title = story["title"] %>
+    <% domain_name = story["domain"] %>
+    <% score = story["score"] %>
+    <% by = story["by"] %>
+    <% get_time_string = story["get_time_string"] %>
+    <% get_total_comments = story["get_total_comments"] %>
+
+    <div class="story">
+      <div class="index">
+        <%= index + 1 %>.
+        <a href="https://news.ycombinator.com/item?id=<%= id %>"><img id="gray-arrow" src="/gray_triangle.png" /></a>
+      </div>
+      <div class="text">
+        <p class="title">
+          <a href=<%= url %>><%= title %>&nbsp;</a>
+          <span class="domain"><%= domain_name %></span
+        ></p>
+        <ul>
+          <li>
+            <%= score %> points by 
+            <a href="https://news.ycombinator.com/user?id=<%= by %>"><%= by %></a> 
+            <a href="https://news.ycombinator.com/item?id=<%= id %>"><%= get_time_string %></a>
+          </li>
+          <li>
+            hide
+          </li>
+          <li>
+            <%= get_total_comments %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</section>
+
+<section id="wrap" data="/job/show"></section> <!-- Append 30 more new top stories -->
+<p class="loading">Loading...</p>
+
+<%= render '/partials/footer' %>
