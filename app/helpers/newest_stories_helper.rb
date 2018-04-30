@@ -1,2 +1,0 @@
-module NewestStoriesHelper
-end

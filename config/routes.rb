@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'top_stories/index'
   get 'top_stories/show'
 
-  get '/newest', to: 'newest_stories#index'
+  get '/newest', to: 'newest#index'
+  get '/newest/show'
 
   root 'top_stories#index'
 end

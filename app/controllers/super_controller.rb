@@ -4,11 +4,11 @@ require 'json'
 class SuperController < ApplicationController
   def fill_stories(url, index_start, length, index)
     response = get_data(url)
-    top_stories = JSON.parse(response) 
-    top_stories = top_stories[index_start, length] 
-    stories = []
+    stories = JSON.parse(response) 
+    stories = stories[index_start, length] 
+    stories_ids = []
     
-    top_stories.each_with_index do |story|
+    stories.each_with_index do |story|
       response = get_data("https://hacker-news.firebaseio.com/v0/item/#{story}.json")
       response = JSON.parse(response)
       append_attributes = { 
@@ -18,14 +18,16 @@ class SuperController < ApplicationController
         'index' => index
       }
       response.merge!(append_attributes)
-      stories.push(response)
+      stories_ids.push(response)
       index += 1
     end
     
     # index_start += 30
-    stories
+    stories_ids
   end
   
+  private
+
   def get_data(url)
     uri = URI(url)
     Net::HTTP.get(uri)

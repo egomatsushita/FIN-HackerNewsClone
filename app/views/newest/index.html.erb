@@ -1,7 +1,7 @@
 <%= render '/partials/navbar' %>
 
 <section>
-  <% @stories.each_with_index do |story, index| %>
+  <% @stories_ids.each_with_index do |story, index| %>
     <% id = story["id"] %>
     <% url = story["url"] %>
     <% title = story["title"] %>
@@ -39,7 +39,7 @@
   <% end %>
 </section>
 
-<section id="wrap"></section> <!-- Append 30 more new top stories -->
+<section id="wrap" data="/newest/show"></section> <!-- Append 30 more new top _ids -->
 <p class="loading">Loading...</p>
 
 <%= render '/partials/footer' %>

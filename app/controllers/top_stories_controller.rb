@@ -16,7 +16,6 @@ class TopStoriesController < ApplicationController
   
   def index
     @stories = fill_top_stories
-
   end
   
   private
@@ -27,7 +26,7 @@ class TopStoriesController < ApplicationController
     top_stories = top_stories[@@index_start, @@length] 
     stories = []
     
-    top_stories.each_with_index do |story|
+    top_stories.each do |story|
       response = get_data("https://hacker-news.firebaseio.com/v0/item/#{story}.json")
       response = JSON.parse(response)
       append_attributes = { 
