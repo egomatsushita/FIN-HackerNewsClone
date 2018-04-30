@@ -1,7 +1,7 @@
 <%= render '/partials/navbar' %>
 
 <section>
-  <% @stories.each_with_index do |story, index| %>
+  <% @stories_ids.each_with_index do |story, index| %>
     <% id = story["id"] %>
     <% url = story["url"] %>
     <% title = story["title"] %>

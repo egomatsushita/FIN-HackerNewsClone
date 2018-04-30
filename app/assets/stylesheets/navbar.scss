@@ -43,6 +43,14 @@ nav {
       
       li {
         padding: 0px 5px;      
+        
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+        a:link:active, a:hover {
+          color: white;
+        }
       }      
       li:first-child {
         padding-left: 0px;

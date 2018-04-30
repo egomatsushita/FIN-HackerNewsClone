@@ -22,7 +22,6 @@ class SuperController < ApplicationController
       index += 1
     end
     
-    # index_start += 30
     stories_ids
   end
   
