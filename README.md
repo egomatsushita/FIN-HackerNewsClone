@@ -1,24 +1,31 @@
-# README
+# FIN - Hacker News Clone App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hacker News Clone App is a clone of the newsfeed on HackerNews. It will use Ruby-on-Rails.
 
-Things you may want to cover:
+## Main Features
 
-* Ruby version
+- When a user scrolls to the bottom of the page, another 30 posts are appended to the bottom of the page using AJAX.
+- Mobile responsive
+- CSS layout using Flexbox
 
-* System dependencies
+## Live Demo
+- https://fin-hacker-news-clone.herokuapp.com/
 
-* Configuration
+## Screenshots
 
-* Database creation
+### Main Page
+![Main Page](*)
 
-* Database initialization
+## Possible Improvements
 
-* How to run the test suite
+- “Loading…” at the bottom of the page is hard coded
+- It is only allowed to show up to 500 top stories
+- Search input do nothing
 
-* Services (job queues, cache servers, search engines, etc.)
+## Install
 
-* Deployment instructions
-
-* ...
+1. Clone the repo: https://github.com/egomatsushita/FIN-HackerNewsClone
+2. In the FIN-HackerNewsClone directory run bundle install
+3. Install postgresql
+4. Create the database
+5. Start the server: rails server
