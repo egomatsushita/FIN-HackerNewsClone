@@ -1,5 +1,10 @@
 <%= render '/partials/navbar' %>
 
+<div class="message">
+  <p>
+    These are jobs at YC startups. You can apply to many at once through Work at a Startup or Triplebyte, and browse company profiles at Key Values (YC W18).
+  </p>
+</div>
 <section>
   <% @stories_ids.each_with_index do |story, index| %>
     <% id = story["id"] %>
