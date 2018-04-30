@@ -1,0 +1,2 @@
+module NewestStoriesHelper
+end
