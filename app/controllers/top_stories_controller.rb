@@ -2,15 +2,30 @@ require 'net/http'
 require 'json'
 
 class TopStoriesController < ApplicationController
-  @@index_start = 30
+  @@index_start = 0
   @@length = 30
-  @@index = 31
+  @@index = 1
 
   def show
+    @stories = fill_top_stories
+
+    respond_to do |format|
+      format.json { render json: @stories.to_json }
+    end
+  end
+  
+  def index
+    @stories = fill_top_stories
+
+  end
+  
+  private
+
+  def fill_top_stories
     response = get_data('https://hacker-news.firebaseio.com/v0/topstories.json')
     top_stories = JSON.parse(response) 
     top_stories = top_stories[@@index_start, @@length] 
-    @stories = []
+    stories = []
     
     top_stories.each_with_index do |story|
       response = get_data("https://hacker-news.firebaseio.com/v0/item/#{story}.json")
@@ -22,41 +37,13 @@ class TopStoriesController < ApplicationController
         'index' => @@index
       }
       response.merge!(append_attributes)
-      @stories.push(response)
+      stories.push(response)
       @@index += 1
     end
     
     @@index_start += 30
-
-    respond_to do |format|
-      format.json { render json: @stories.to_json }
-    end
+    stories
   end
-  
-  def index
-    response = get_data('https://hacker-news.firebaseio.com/v0/topstories.json')
-    top_stories = JSON.parse(response) 
-    index_start = 0;
-    length = 30;
-    top_stories = top_stories[index_start, length] 
-    @stories = []
-    
-    top_stories.each do |story|
-      response = get_data("https://hacker-news.firebaseio.com/v0/item/#{story}.json")
-      response = JSON.parse(response)
-      append_attributes = { 
-        'get_total_comments' => get_total_comments(response['descendants']),
-        'get_time_string' => get_time_string(response['time']),
-        'domain' => get_url_substring(response['url'])
-      }
-      response.merge!(append_attributes)
-      @stories.push(response)
-    end
-    
-    @stories
-  end
-  
-  private
   
   def get_data(url)
     uri = URI(url)
