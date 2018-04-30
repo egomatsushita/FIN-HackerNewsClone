@@ -17,10 +17,10 @@ Hacker News Clone App is a clone of the newsfeed on HackerNews. It will use Ruby
 ![Main Page](https://github.com/egomatsushita/FIN-HackerNewsClone/blob/master/public/FIN-HackerNewsClone_Main.png?raw=true)
 
 ### Main Page - Gif
-![Main Page - Gif](https://github.com/egomatsushita/FIN-HackerNewsClone/blob/master/public/fin-hacker-news-clone-main.gif)
+![Main Page - Gif](https://github.com/egomatsushita/FIN-HackerNewsClone/blob/master/public/fin-hacker-news-clone-responsive.gif)
 
 ### Mobile Responsive - Gif
-![Mobile Responsive](https://github.com/egomatsushita/FIN-HackerNewsClone/blob/master/public/fin-hacker-news-clone-responsive.gif)
+![Mobile Responsive](https://github.com/egomatsushita/FIN-HackerNewsClone/blob/master/public/fin-hacker-news-clone-main.gif)
 
 ## Possible Improvements
 
