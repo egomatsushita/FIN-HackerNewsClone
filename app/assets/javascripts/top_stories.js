@@ -17,7 +17,6 @@ const yHandler = () => {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {     
         const newStories = JSON.parse(this.responseText);
-        //wrap.innerHTML += //`<div class=\"new-data\">${this.responseText}</div>`;
         newStories.map((story, index) => {
           wrap.innerHTML += 
             `<div class="story">

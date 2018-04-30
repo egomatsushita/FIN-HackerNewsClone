@@ -9,8 +9,6 @@ class TopStoriesController < ApplicationController
   def show
     response = get_data('https://hacker-news.firebaseio.com/v0/topstories.json')
     top_stories = JSON.parse(response) 
-    # index_start = 30;
-    # length = 60;
     top_stories = top_stories[@@index_start, @@length] 
     @stories = []
     
@@ -57,29 +55,6 @@ class TopStoriesController < ApplicationController
     
     @stories
   end
-# class TopStoriesController < ApplicationController
-#   def index
-#     response = get_data('https://hacker-news.firebaseio.com/v0/topstories.json')
-#     top_stories = JSON.parse(response) 
-#     index_start = 0;
-#     index_end = 30;
-#     top_stories = top_stories[index_start, index_end] 
-#     @stories = []
-    
-#     top_stories.each do |story|
-#       response = get_data("https://hacker-news.firebaseio.com/v0/item/#{story}.json")
-#       response = JSON.parse(response)
-#       append_attributes = { 
-#         'get_total_comments' => get_total_comments(response['descendants']),
-#         'get_time_string' => get_time_string(response['time']),
-#         'domain' => get_url_substring(response['url'])
-#       }
-#       response.merge!(append_attributes)
-#       @stories.push(response)
-#     end
-
-#     @stories
-#   end
   
   private
   
@@ -118,7 +93,7 @@ class TopStoriesController < ApplicationController
   end
 
   def get_url_substring(url)
-    domain = nil
+    domain = ''
 
     unless url.nil?
       split_url = url.split('/')
