@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   get '/show', to: 'show#index'
   get '/show/show'
 
+  get '/ask', to: 'ask#index'
+  get '/ask/show'
+
   root 'top_stories#index'
 end

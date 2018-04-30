@@ -14,6 +14,8 @@ const yHandler = () => {
     url = "/newest/show";
   } else if (attr_data === "/show/show") {
     url = "/show/show";
+  } else if (attr_data === "/ask/show") {
+    url = "/ask/show";
   }
 
   if (scrollTop > limit && !isLoading) {
