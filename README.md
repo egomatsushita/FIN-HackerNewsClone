@@ -1,6 +1,6 @@
 # FIN - Hacker News Clone App
 
-Hacker News Clone App is a clone of the newsfeed on HackerNews. It will use Ruby-on-Rails.
+Hacker News Clone App is a clone of the newsfeed on HackerNews. It uses Ruby-on-Rails, JavaScript, and AJAX.
 
 ## Main Features
 
